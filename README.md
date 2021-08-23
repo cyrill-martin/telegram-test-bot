@@ -1,20 +1,20 @@
 # telegram-test-bot
 
-# Prerequisites
+## Prerequisites
 
-## Local Development
+### Local Development
 
 - A registered Telegram bot and it's token
 - Python 3
 - Possibility to create a Python virtual environment
 - Git
 
-## Deployment to Heroku
+### Deployment to Heroku
 
 - A Heroku account
 - Heroku CLI
 
-# Develop Locally
+## Develop Locally
 
 1. Clone repository
 2. ``cd`` into cloned repository
@@ -26,15 +26,16 @@
 5. Run ``source env/bin/activate`` to activate the virtual environment
 6. Run ``pip3 install -r requirements.txt`` to install the needed Python packages
 7. Run ``python3 bot.py`` to run the bot locally in polling mode
+8. The bot is now **running on your computer** as long as you don't kill the process
 
-You (and everybody else) can now chat with your bot through the Telegram app.
+**You (and everybody else) can now chat with your bot through the Telegram app.**
 
 ## Deployment to Heroku
 
 ### Prerequisites
 
 1. Create a Heroku app
-2. Make sure to add the the following environment variables to the app:
+2. Make sure to add the following environment variables to the app:
    - BOT_TOKEN={YOUR TELEGRAM BOT TOKEN}
    - BOT_URL={YOUR HEROKU APP URL (incl. the slash at the end)}
    - BOT_MODE=webhook
@@ -50,5 +51,6 @@ You (and everybody else) can now chat with your bot through the Telegram app.
 2. ``git add .``
 3. ``git commit -m {YOUR COMMIT MESSAGE}``
 4. ``git push heroku main``
+5. The bot is now **running in a Heroku container**
 
-You (and everybody else) can now chat with your bot through the Telegram app.
+**You (and everybody else) can now chat with your bot through the Telegram app.**
