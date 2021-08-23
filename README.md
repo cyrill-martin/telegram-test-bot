@@ -4,7 +4,7 @@
 
 ### Local Development
 
-- A registered Telegram bot and it's token
+- A registered Telegram bot and its token
 - Python 3
 - Possibility to create a Python virtual environment
 - Git
