@@ -19,9 +19,11 @@
 1. Clone this repository
 2. ``cd`` into the cloned repository
 3. Create a .env file with the following variables:
-   - BOT_TOKEN={YOUR TELEGRAM BOT TOKEN}
-   - BOT_URL={YOUR HEROKU APP URL (incl. the slash at the end)}
-   - BOT_MODE=polling
+   ```sh
+   BOT_TOKEN={YOUR TELEGRAM BOT TOKEN}
+   BOT_URL={YOUR HEROKU APP URL (incl. the slash at the end)}
+   BOT_MODE=polling
+   ```
 4. Run ``python3 -m venv env`` to create a Python virtual environment
 5. Run ``source env/bin/activate`` to activate the virtual environment
 6. Run ``pip3 install -r requirements.txt`` to install the needed Python packages
