@@ -2,22 +2,22 @@
 
 ## Prerequisites
 
-### Local Development
+### For Local Development
 
 - A registered Telegram bot and its token
 - Python 3
-- Possibility to create a Python virtual environment
+- The possibility to create a Python virtual environment
 - Git
 
-### Deployment to Heroku
+### For Deployment to Heroku
 
 - A Heroku account
 - Heroku CLI
 
 ## Develop Locally
 
-1. Clone repository
-2. ``cd`` into cloned repository
+1. Clone this repository
+2. ``cd`` into the cloned repository
 3. Create a .env file with the following variables:
    - BOT_TOKEN={YOUR TELEGRAM BOT TOKEN}
    - BOT_URL={YOUR HEROKU APP URL (incl. the slash at the end)}
