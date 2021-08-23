@@ -38,9 +38,11 @@
 
 1. Create a Heroku app
 2. Make sure to add the following environment variables to the app:
-   - BOT_TOKEN={YOUR TELEGRAM BOT TOKEN}
-   - BOT_URL={YOUR HEROKU APP URL (incl. the slash at the end)}
-   - BOT_MODE=webhook
+   ```sh
+   BOT_TOKEN={YOUR TELEGRAM BOT TOKEN}
+   BOT_URL={YOUR HEROKU APP URL (incl. the slash at the end)}
+   BOT_MODE=webhook
+   ```
 
 ### First Time
 
