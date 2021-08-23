@@ -1,6 +1,10 @@
 # telegram-test-bot
 
-## Prerequisites
+This is the repository of a Telegram test bot with a custom inline keyboard, a regular command handler, and an image handler to accept and download an image. 
+
+It can be used as a Python Telegram bot boilerplate to develop locally and deploy to Heroku.  
+
+## Prerequisites to Run the Code
 
 ### For Local Development
 

@@ -4,7 +4,7 @@ import logging
 import time
 from dotenv import load_dotenv
 from telegram import ChatAction, InlineKeyboardButton, InlineKeyboardMarkup, Update
-from telegram.ext import Updater, CommandHandler, CallbackQueryHandler, CallbackContext
+from telegram.ext import Updater, CommandHandler, CallbackQueryHandler, CallbackContext, MessageHandler, Filters
 
 # Load your environment variables from the .env file
 load_dotenv()
@@ -27,6 +27,14 @@ def show_typing(context, chat_id):
 def send_reply(context, chat_id, text):
   show_typing(context, chat_id)
   context.bot.send_message(chat_id=chat_id, text=text)
+
+def option_1(update, context):
+  reply = "Lets proceed with option 1"
+  send_reply(context, get_chat_id(update), reply)
+
+def option_sth(update, context, option): 
+  reply = f"Lets proceed with option {option}"
+  send_reply(context, get_chat_id(update), reply)
 
 ################################
 # Create telegram bot handlers #
@@ -61,18 +69,22 @@ def button(update: Update, context: CallbackContext):
     else: 
       option_sth(update, context, query.data)
 
-def option_1(update, context):
-  reply = "Lets proceed with option 1"
-  send_reply(context, get_chat_id(update), reply)
-
-def option_sth(update, context, option): 
-  reply = f"Lets proceed with option {option}"
-  send_reply(context, get_chat_id(update), reply)
-
 def sk8(update, context):
   reply = "Do a kickflip!"
   send_reply(context, get_chat_id(update), reply)
 
+def image_handler(update, context):
+  # Get the ID of the biggest image (last item in photo array)
+  file = update.message.photo[-1].file_id
+  # Get the image object
+  obj = context.bot.get_file(file)
+  # Download the image and use its file_id for the filename
+  obj.download(file)
+  # update.message.reply_text("Image received")
+
+######################################
+# The main function starting the bot #
+######################################
 def main():
   # Create the telegram bot
   updater = Updater(token=bot_token, use_context=True)
@@ -83,6 +95,7 @@ def main():
   # Set the bot handlers
   updater.dispatcher.add_handler(CommandHandler("start", start))
   updater.dispatcher.add_handler(CallbackQueryHandler(button))
+  updater.dispatcher.add_handler(MessageHandler(Filters.photo, image_handler))
   updater.dispatcher.add_handler(CommandHandler("sk8", sk8))
 
   if bot_mode == "webhook":
